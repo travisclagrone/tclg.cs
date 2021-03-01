@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Tclg.Text
@@ -74,37 +75,37 @@ namespace Tclg.Text
         public static int IndexOrDefault(this string @this, string @value, DefaultIndex @default)
         {
             int index = @this.IndexOf(@value);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, @default);
         }
 
         public static int IndexOrDefault(this string @this, string @value, DefaultIndex @default, StringComparison comparisonType)
         {
             int index = @this.IndexOf(@value, comparisonType);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, @default);
         }
 
         public static int IndexOrDefault(this string @this, string @value, int startIndex, DefaultIndex @default)
         {
             int index = @this.IndexOf(@value, startIndex);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, startIndex, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, startIndex, @default);
         }
 
         public static int IndexOrDefault(this string @this, string @value, int startIndex, DefaultIndex @default, StringComparison comparisonType)
         {
             int index = @this.IndexOf(@value, startIndex, comparisonType);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, startIndex, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, startIndex, @default);
         }
 
         public static int IndexOrDefault(this string @this, string @value, int startIndex, int count, DefaultIndex @default)
         {
             int index = @this.IndexOf(@value, startIndex, count);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, startIndex, count, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, startIndex, count, @default);
         }
 
         public static int IndexOrDefault(this string @this, string @value, int startIndex, int count, DefaultIndex @default, StringComparison comparisonType)
         {
             int index = @this.IndexOf(@value, startIndex, count, comparisonType);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, startIndex, count, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, startIndex, count, @default);
         }
 
         #endregion
@@ -114,37 +115,37 @@ namespace Tclg.Text
         public static int LastIndexOrDefault(this string @this, string @value, DefaultIndex @default)
         {
             int index = @this.LastIndexOf(@value);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, @default);
         }
 
         public static int LastIndexOrDefault(this string @this, string @value, DefaultIndex @default, StringComparison comparisonType)
         {
             int index = @this.LastIndexOf(@value, comparisonType);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, @default);
         }
 
         public static int LastIndexOrDefault(this string @this, string @value, int startIndex, DefaultIndex @default)
         {
             int index = @this.LastIndexOf(@value, startIndex);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, startIndex, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, startIndex, @default);
         }
 
         public static int LastIndexOrDefault(this string @this, string @value, int startIndex, DefaultIndex @default, StringComparison comparisonType)
         {
             int index = @this.LastIndexOf(@value, startIndex, comparisonType);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, startIndex, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, startIndex, @default);
         }
 
         public static int LastIndexOrDefault(this string @this, string @value, int startIndex, int count, DefaultIndex @default)
         {
             int index = @this.LastIndexOf(@value, startIndex, count);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, startIndex, count, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, startIndex, count, @default);
         }
 
         public static int LastIndexOrDefault(this string @this, string @value, int startIndex, int count, DefaultIndex @default, StringComparison comparisonType)
         {
             int index = @this.LastIndexOf(@value, startIndex, count, comparisonType);
-            return index != -1 ? index : ResolveDefaultIndex(@this, @value, startIndex, count, @default);
+            return index != -1 ? index : ResolveDefaultIndex(@this, startIndex, count, @default);
         }
 
         #endregion
@@ -233,6 +234,7 @@ namespace Tclg.Text
             }
         }
 
+        [SuppressMessage("csharp", "IDE0057", MessageId = "Substring can be simplified", Justification = "Clarity of intention")]
         public static string SubstringBeforeFirstOrDefault(this string @this, string @value, bool includeValue = false, DefaultSubstring @default = DefaultSubstring.EmptyString)
         {
             int index = @this.IndexOf(@value);
@@ -246,6 +248,7 @@ namespace Tclg.Text
             }
         }
 
+        [SuppressMessage("csharp", "IDE0057", MessageId = "Substring can be simplified", Justification = "Clarity of intention")]
         public static string? TrySubstringBeforeFirst(this string @this, string @value, bool includeValue = false)
         {
             int index = @this.IndexOf(@value);
@@ -267,6 +270,7 @@ namespace Tclg.Text
 
         #region SubstringAfter
 
+        [SuppressMessage("csharp", "IDE0057", MessageId = "Substring can be simplified", Justification = "Clarity of intention")]
         public static string SubstringAfterFirst(this string @this, string @value, bool includeValue = false)
         {
             int index = @this.IndexOf(@value);
@@ -280,6 +284,7 @@ namespace Tclg.Text
             }
         }
 
+        [SuppressMessage("csharp", "IDE0057", MessageId = "Substring can be simplified", Justification = "Clarity of intention")]
         public static string SubstringAfterFirstOrDefault(this string @this, string @value, bool includeValue = false, DefaultSubstring @default = DefaultSubstring.EmptyString)
         {
             int index = @this.IndexOf(@value);
@@ -293,6 +298,7 @@ namespace Tclg.Text
             }
         }
 
+        [SuppressMessage("csharp", "IDE0057", MessageId = "Substring can be simplified", Justification = "Clarity of intention")]
         public static string? TrySubstringAfterFirst(this string @this, string @value, bool includeValue = false)
         {
             int index = @this.IndexOf(@value);
