@@ -1,0 +1,14 @@
+{
+  "[csharp]": {
+    "editor.codeLens": true
+  },
+
+  "csharp.referencesCodeLens.enabled": false,
+
+  "files.exclude": {},
+
+  "indentRainbow.excludedLanguages": [
+    "plaintext",
+    "csharp"
+  ]
+}
