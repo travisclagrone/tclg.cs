@@ -221,6 +221,8 @@ namespace Tclg.Text
 
         #region SubstringBefore
 
+        #region SubstringBeforeFirst
+
         public static string SubstringBeforeFirst(this string @this, string @value, bool includeValue = false)
         {
             int index = @this.IndexOf(@value);
@@ -262,13 +264,21 @@ namespace Tclg.Text
             }
         }
 
+        #endregion
+
+        #region SubstringBeforeLast
+
         // TODO SubstringBeforeLast
         // TODO SubstringBeforeLastOrDefault
         // TODO TrySubstringBeforeLast
 
         #endregion
 
+        #endregion
+
         #region SubstringAfter
+
+        #region SubstringAfterFirst
 
         [SuppressMessage("csharp", "IDE0057", MessageId = "Substring can be simplified", Justification = "Clarity of intention")]
         public static string SubstringAfterFirst(this string @this, string @value, bool includeValue = false)
@@ -312,9 +322,17 @@ namespace Tclg.Text
             }
         }
 
+
+
+        #endregion
+
+        #region SubstringAfterLast
+
         // TODO SubstringAfterLast
         // TODO SubstringAfterLastOrDefault
         // TODO TrySubstringAfterLast
+
+        #endregion
 
         #endregion
 
@@ -330,6 +348,6 @@ namespace Tclg.Text
 
         // TODO Remove extensions
 
-        #endregion Mutators
+        #endregion
     }
 }
